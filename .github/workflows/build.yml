@@ -26,7 +26,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: download
         run: |
-          curl -L -O --header "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" --header "Referer: https://musl.cc" https://musl.cc/aarch64-linux-musl-cross.tgz
+          curl -L -O --max-time 60 --header "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" --header "Referer: https://musl.cc" https://musl.cc/aarch64-linux-musl-cross.tgz
 
       - name: release
         if: startsWith(github.ref, 'refs/tags/')
